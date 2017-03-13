@@ -1,0 +1,479 @@
+/* ugly normalize css */
+* {
+  box-sizing: border-box; }
+
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+/* BASE */
+html {
+  background-color: #232323;
+  font-size: 14px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility; }
+
+body {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5; }
+
+body, button, input, select, textarea {
+  font-family: "Open Sans", sans-serif; }
+
+a {
+  color: #59bd81;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative; }
+
+ul {
+  list-style: none; }
+
+hr {
+  background: #303030;
+  height: 2px;
+  width: 100%;
+  border: 0;
+  margin: 1em 0; }
+
+/* LAYOUT */
+#main, #footer {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center; }
+
+#footer {
+  color: #bfbfbf;
+  padding: 3em 1.5em;
+  font-size: 0.75rem; }
+
+.control {
+  position: relative;
+  text-align: left; }
+  .control:not(:last-child) {
+    margin-bottom: 1rem; }
+
+.level {
+  display: flex;
+  justify-content: space-between;
+  margin: -0.825em; }
+  .level.is-compact {
+    justify-content: center; }
+  .level .level-item {
+    padding: 0.825em; }
+
+.title {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 0.85rem; }
+  .title.is-huge {
+    margin: 2em 0; }
+
+.subtitle {
+  font-size: 1.25em;
+  margin-bottom: 0.85rem; }
+
+.jumbo {
+  padding: 2.5em 0; }
+  .jumbo .title, .jumbo .subtitle {
+    margin-bottom: 0; }
+
+.icon {
+  display: inline-block;
+  font-size: 21px;
+  height: 1.5rem;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 250ms ease-in-out; }
+  .icon:hover {
+    color: #232323; }
+  .icon:hover:after {
+    width: 0; }
+  .icon .fa {
+    font-size: inherit;
+    line-height: inherit; }
+  .icon.is-small {
+    font-size: 14px;
+    height: 1rem;
+    width: 1rem;
+    line-height: 1rem; }
+
+.fa {
+  font-size: 21px;
+  text-align: center;
+  vertical-align: top; }
+
+.alert {
+  padding: 1em;
+  background-color: #303030;
+  border: 2px solid #494949; }
+  .alert.is-danger {
+    border-color: #f82e2e; }
+
+.label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+#results-label {
+  padding: 0.5rem 0; }
+
+.input {
+  width: 100%;
+  background: #161616;
+  color: #ffffff;
+  border: 2px solid transparent;
+  padding: 0 0.75em;
+  height: 2.5em;
+  transition: all 200ms ease-in-out; }
+  .input:hover {
+    border-color: #303030; }
+  .input:focus {
+    outline: 0;
+    border-color: #59bd81; }
+
+.select {
+  display: inline-block;
+  height: 2.5em;
+  position: relative;
+  vertical-align: top; }
+  .select:after {
+    border: 1px solid #59bd81;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.5em;
+    pointer-events: none;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 0.5em;
+    margin-top: -0.375em;
+    right: 1.125em;
+    top: 50%;
+    z-index: 4; }
+  .select select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 2px solid transparent;
+    box-shadow: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.285em;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    position: relative;
+    vertical-align: top;
+    background-color: #161616;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    outline: none;
+    padding-right: 2.5em;
+    transition: all 200ms ease-in-out; }
+    .select select:hover {
+      border-color: #303030; }
+    .select select:focus {
+      outline: 0;
+      border-color: #59bd81; }
+
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #303030;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  border: 2px solid transparent;
+  padding: 0.5em 0.75em;
+  transition: all 200ms ease-in-out; }
+  .btn:hover {
+    background-color: #3d3d3d; }
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none; }
+  .btn:after {
+    display: none; }
+
+.brodeal-container {
+  background-color: #ffffff;
+  padding: 2em;
+  transition: all 500ms ease-in-out;
+  transform: translateY(0);
+  opacity: 1; }
+  .brodeal-container.is-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    padding: 0; }
+
+.timestamp {
+  color: #bfbfbf;
+  padding: 1em; }
+  .timestamp:not(:last-child) {
+    border-bottom: 2px solid #e6e6e6;
+    margin-bottom: 1em; }
+
+.brodeal {
+  display: flex;
+  color: #232323;
+  text-align: left;
+  width: 100%; }
+  .brodeal.is-disabled {
+    opacity: 0.25;
+    pointer-events: none; }
+  .brodeal .pic-container {
+    padding-right: 1em;
+    position: relative;
+    text-align: center; }
+  .brodeal .details {
+    width: 100%; }
+  .brodeal .name {
+    font-size: 1.25em; }
+  .brodeal .ilvl {
+    font-size: 0.8rem;
+    color: #494949;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e6e6e6; }
+  .brodeal .enchant-mods,
+  .brodeal .implicit-mods,
+  .brodeal .explicit-mods {
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em; }
+    .brodeal .enchant-mods .tag,
+    .brodeal .implicit-mods .tag,
+    .brodeal .explicit-mods .tag {
+      margin-left: 1em; }
+  .brodeal .prop-list {
+    display: flex; }
+    .brodeal .prop-list li {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25em; }
+    .brodeal .prop-list .timestamp {
+      font-size: 0.75rem;
+      color: gray; }
+  .brodeal .btn.is-whisper {
+    padding: 0 0.5em;
+    font-size: 0.85rem; }
+  .brodeal:not(:last-child) {
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 1em;
+    margin-bottom: 1em; }
+
+/* HELPERS */
+.bold {
+  font-weight: 700; }
+
+.has-text-left {
+  text-align: left; }
+
+.has-text-centered {
+  text-align: center; }
+
+.has-text-right {
+  text-align: right; }
+
+#top-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 1em;
+  background: #48b573;
+  color: #fff;
+  padding: .5em 1em;
+  transform: translateX(-50%);
+  border: 0;
+  pointer-events: all;
+  z-index: 9999;
+  transition: all 500ms ease-in-out; }
+  #top-btn.is-hidden {
+    opacity: 0;
+    bottom: -100%;
+    pointer-events: none; }
+
+.unid {
+  color: #f71515; }
+
+.corrupted {
+  padding: 0.25em;
+  background-color: #f71515;
+  color: #ffffff; }
+
+.tag {
+  vertical-align: top;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25em 0.5em;
+  background-color: #d9d9d9;
+  color: #232323;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+  .tag.is-danger {
+    background-color: #f71515;
+    color: #ffffff; }
+  .tag.is-special-butterfly {
+    background-color: #8B579C;
+    color: #ffffff; }
+
+/* Nem lopott */
+.currency {
+  white-space: nowrap;
+  padding-right: 20px;
+  background-position: right center;
+  background-size: 20px;
+  background-repeat: no-repeat; }
+
+.currency-chrom {
+  background-image: url("../img/currency/Chromatic_Orb.png"); }
+
+.currency-alt {
+  background-image: url("../img/currency/Orb_of_Alteration.png"); }
+
+.currency-jewel {
+  background-image: url("../img/currency/Jeweller's_Orb.png"); }
+
+.currency-chance {
+  background-image: url("../img/currency/Orb_of_chance.png"); }
+
+.currency-chisel,
+.currency-cartographer {
+  background-image: url("../img/currency/Cartographer's_Chisel.png"); }
+
+.currency-fuse,
+.currency-fusing {
+  background-image: url("../img/currency/Orb_of_Fusing.png"); }
+
+.currency-alch {
+  background-image: url("../img/currency/Orb_of_Alchemy.png"); }
+
+.currency-scour {
+  background-image: url("../img/currency/Orb_of_Scouring.png"); }
+
+.currency-blessed {
+  background-image: url("../img/currency/Blessed_Orb.png"); }
+
+.currency-chaos {
+  background-image: url("../img/currency/Chaos_Orb.png"); }
+
+.currency-regret {
+  background-image: url("../img/currency/Orb_of_Regret.png"); }
+
+.currency-regal {
+  background-image: url("../img/currency/Regal_Orb.png"); }
+
+.currency-gcp,
+.currency-gemcutter {
+  background-image: url("../img/currency/Gemcutter's_Prism.png"); }
+
+.currency-divine {
+  background-image: url("../img/currency/Divine_Orb.png"); }
+
+.currency-exa,
+.currency-exalted {
+  background-image: url("../img/currency/Exalted_Orb.png"); }
+
+.currency-mirror {
+  background-image: url("../img/currency/Mirror_of_Kalandra.png"); }
+
+.currency-vaal {
+  background-image: url("../img/currency/Vaal_Orb.png"); }
+
+.currency-coin,
+.currency-perandus,
+.currency-p,
+.currency-shekel {
+  background-image: url("../img/currency/Perandus_Coin.png"); }
+
+.currency-silver {
+  background-image: url("../img/currency/Silver_Coin.png"); }
+
+.sockets {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.socket {
+  position: relative; }
+
+.socketLink {
+  position: absolute;
+  z-index: 10000; }
+
+.socketLink0, .socketLink2, .socketLink4 {
+  background-image: url("../img/sockets/Socket_Link_Horizontal.png");
+  width: 37.72819px;
+  height: 15.21298px; }
+
+.socketLink1, .socketLink3 {
+  background-image: url("../img/sockets/Socket_Link_Vertical.png");
+  width: 15.21298px;
+  height: 37.72819px; }
+
+.socketLink0 {
+  left: 28px;
+  top: 16px; }
+
+.socketLink1 {
+  left: 63px;
+  top: 28.60041px; }
+
+.socketLink2 {
+  left: 28px;
+  top: 63.59026px; }
+
+.socketLink3 {
+  left: 16.12576px;
+  top: 76.06491px; }
+
+.socketLink4 {
+  left: 28px;
+  top: 111.05477px; }
+
+.socket {
+  width: 47px;
+  height: 47px;
+  float: left; }
+
+.socketR {
+  background-image: url("../img/sockets/r.png"); }
+
+.socketG {
+  background-image: url("../img/sockets/g.png"); }
+
+.socketB {
+  background-image: url("../img/sockets/b.png"); }
+
+.socketW {
+  background-image: url("../img/sockets/w.png"); }
+
+.socketRight {
+  float: right; }
